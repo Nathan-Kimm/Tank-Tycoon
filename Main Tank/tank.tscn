@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://hpof4qwtolnk"]
+
+[ext_resource type="Texture2D" uid="uid://bx1d45byr4fvf" path="res://Main Tank/sea_background.png" id="1_pkdcc"]
+[ext_resource type="Script" path="res://Main Tank/tank.gd" id="1_q4j6a"]
+[ext_resource type="PackedScene" uid="uid://bpwjk8d1l3ugi" path="res://Fish/Clownfish/clownfish.tscn" id="3_fxqdk"]
+[ext_resource type="PackedScene" uid="uid://bdntpxpnv1b5f" path="res://Menu Screen/scene_transition_animation.tscn" id="4_gy8y7"]
+[ext_resource type="PackedScene" uid="uid://bjyn77ccc1jsn" path="res://Menu Screen/pause_menu.tscn" id="5_sncyn"]
+
+[node name="Tank" type="Node2D"]
+position = Vector2(-603, -588)
+script = ExtResource("1_q4j6a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -984.0
+offset_top = -562.5
+offset_right = 984.0
+offset_bottom = 562.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pkdcc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="TextureRect"]
+position = Vector2(987, 563)
+
+[node name="Clownfish" parent="." instance=ExtResource("3_fxqdk")]
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("4_gy8y7")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_sncyn")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

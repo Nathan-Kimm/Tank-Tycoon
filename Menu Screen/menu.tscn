@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca0rnh4cjios3"]
+
+[ext_resource type="Script" path="res://Menu Screen/Menu.gd" id="1_sax62"]
+[ext_resource type="PackedScene" uid="uid://bdntpxpnv1b5f" path="res://Menu Screen/scene_transition_animation.tscn" id="2_jg05a"]
+
+[sub_resource type="Gradient" id="Gradient_bnwj2"]
+offsets = PackedFloat32Array(0, 0.188755, 0.39759, 0.590361, 0.803213, 1)
+colors = PackedColorArray(0, 0.2, 0.4, 1, 0.0901961, 0.286275, 0.470588, 1, 0.184314, 0.372549, 0.541176, 1, 0.27451, 0.462745, 0.607843, 1, 0.368627, 0.54902, 0.678431, 1, 0.458824, 0.635294, 0.74902, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ysdug"]
+gradient = SubResource("Gradient_bnwj2")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+script = ExtResource("1_sax62")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -12.0
+offset_right = 5.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_ysdug")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -272.0
+offset_top = -421.0
+offset_right = -108.0
+offset_bottom = -342.0
+color = Color(0, 0.2, 0.4, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -338.0
+offset_top = -142.0
+offset_right = -100.0
+offset_bottom = -43.0
+color = Color(0.0901961, 0.286275, 0.470588, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 845.0
+offset_top = -227.0
+offset_right = 1200.0
+offset_bottom = -107.0
+color = Color(0.458824, 0.635294, 0.74902, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -30.0
+offset_right = 194.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Instructions" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -285.5
+offset_right = 285.5
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "Placeholder"
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("2_jg05a")]
+z_index = -3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Instructions" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

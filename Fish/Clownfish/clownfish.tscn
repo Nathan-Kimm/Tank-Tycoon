@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpwjk8d1l3ugi"]
+
+[ext_resource type="Texture2D" uid="uid://bcy770c8codv5" path="res://Fish/Clownfish/enlarged_clownfish_sprite_sheet.png" id="1_7bcxx"]
+[ext_resource type="Script" path="res://Fish/Clownfish/clownfish.gd" id="1_563nh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rsyk"]
+atlas = ExtResource("1_7bcxx")
+region = Rect2(0, 0, 1080, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiuf3"]
+atlas = ExtResource("1_7bcxx")
+region = Rect2(1080, 0, 1080, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4udc"]
+atlas = ExtResource("1_7bcxx")
+region = Rect2(2160, 0, 1080, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_arhgj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rsyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiuf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4udc")
+}],
+"loop": false,
+"name": &"swimming",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ie0b"]
+size = Vector2(58.4375, 42.5)
+
+[node name="Clownfish" type="CharacterBody2D"]
+script = ExtResource("1_563nh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(96.5, 25.75)
+scale = Vector2(0.0990741, 0.0976563)
+sprite_frames = SubResource("SpriteFrames_arhgj")
+animation = &"swimming"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(96.7813, 25.75)
+shape = SubResource("RectangleShape2D_3ie0b")
