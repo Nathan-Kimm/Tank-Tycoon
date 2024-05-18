@@ -12,13 +12,13 @@ var boundary_size = Vector2(640, 320)
 var boundary_rect = Rect2()
 
 func _ready():
-	animated_sprite_2d.play("swimming")
 	randomize()
 	update_boundary_rect()
 	direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	time_until_change = change_direction_time
 
 func _process(delta):
+	animated_sprite_2d.play("swimming")
 	move_randomly(delta)
 	stay_within_boundary()
 
