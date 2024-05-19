@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wjpsbydti31u"
+path="res://.godot/imported/game_jam.mp3-963b93c030310c5d3d121b53133f6aa2.mp3str"
+
+[deps]
+
+source_file="res://Menu Screen/UI/game_jam.mp3"
+dest_files=["res://.godot/imported/game_jam.mp3-963b93c030310c5d3d121b53133f6aa2.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

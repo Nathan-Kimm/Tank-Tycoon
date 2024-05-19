@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ca0rnh4cjios3"]
+[gd_scene load_steps=11 format=3 uid="uid://ca0rnh4cjios3"]
 
 [ext_resource type="Script" path="res://Menu Screen/Menu.gd" id="1_sax62"]
 [ext_resource type="PackedScene" uid="uid://bdntpxpnv1b5f" path="res://Menu Screen/scene_transition_animation.tscn" id="2_jg05a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ugrc85mi1x08" path="res://Menu Screen/UI/settings_button.png" id="4_my4tm"]
 [ext_resource type="Texture2D" uid="uid://d1bnd7pfm82vn" path="res://Menu Screen/UI/play_button.png" id="4_ng3pi"]
 [ext_resource type="Texture2D" uid="uid://cfrf22tbgrjod" path="res://Menu Screen/UI/quit_button.png" id="5_rl0tc"]
+[ext_resource type="PackedScene" uid="uid://bkfvdephju570" path="res://Menu Screen/settings.tscn" id="7_lc8lo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfud1"]
 
@@ -67,6 +68,9 @@ icon = ExtResource("5_rl0tc")
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("2_jg05a")]
 z_index = -3
 position = Vector2(267, -469)
+
+[node name="Settings" parent="." instance=ExtResource("7_lc8lo")]
+layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Setting" to="." method="_on_setting_pressed"]

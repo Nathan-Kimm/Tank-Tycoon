@@ -1,64 +1,36 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var timer = $"../Timer"
 
-# Variables for movement
-var speed = 100
-var direction = Vector2()
-var change_direction_time = 2.0
-var time_until_change = change_direction_time
-
-# Define the boundary size to match the desired resolution (e.g., 640x320)
-var boundary_size = Vector2(640, 320)
-var boundary_rect = Rect2()
-
-func _ready():
-	randomize()
-	update_boundary_rect()
-	direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-	time_until_change = change_direction_time
+var dir_x = randi() % 5 -2
+var dir_y = randi() % 5 -2
+var right_side = 150
+var left_side = 50
+var top = 50
+var bottom = 150
+var speed = 20
 
 func _process(delta):
-	animated_sprite_2d.play("swimming")
-	move_randomly(delta)
-	stay_within_boundary()
-
-func update_boundary_rect():
-	var screen_size = get_viewport_rect().size
-	var boundary_position = (screen_size - boundary_size) / 2
-	boundary_rect = Rect2(boundary_position, boundary_size)
-
-func move_randomly(delta):
-	time_until_change -= delta
-	if time_until_change <= 0:
-		direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-		time_until_change = change_direction_time
-
-	velocity = direction * speed
-	move_and_slide()
-
-func stay_within_boundary():
-	var position_changed = false
-
-	if position.x < boundary_rect.position.x:
-		position.x = boundary_rect.position.x
-		direction.x *= -1
-		position_changed = true
-	elif position.x > boundary_rect.position.x + boundary_rect.size.x:
-		position.x = boundary_rect.position.x + boundary_rect.size.x
-		direction.x *= -1
-		position_changed = true
-
-	if position.y < boundary_rect.position.y:
-		position.y = boundary_rect.position.y
-		direction.y *= -1
-		position_changed = true
-	elif position.y > boundary_rect.position.y + boundary_rect.size.y:
-		position.y = boundary_rect.position.y + boundary_rect.size.y
-		direction.y *= -1
-		position_changed = true
-
-	if position_changed:
-		velocity = direction * speed
-
-func randf_range(min, max):
-	return randf() * (max - min) + min
+	if dir_x > 0 and global_position.x >= right_side:
+		dir_x = 0
+	if dir_x < 0 and global_position.x <= left_side:
+		dir_x = 0
+	if dir_y > 0 and global_position.y >= right_side:
+		dir_y = 0
+	if dir_y < 0 and global_position.y <= right_side:
+		dir_y = 0
+		
+	position.x += dir_x * speed * delta
+	position.y += dir_y * speed * delta
+	
+func on_Timer_Timeout():
+	randomize()
+	dir_x = randi() % 5 -2
+	dir_y = randi() % 5 - 2
+	speed = randi() % 30 + 10
+	restart_timer()
+	
+func restart_timer():
+	var new_time = randi() % 3 + 1 
+	timer.wait_time = new_time
+	timer.start()

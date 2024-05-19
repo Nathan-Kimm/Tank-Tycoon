@@ -14,6 +14,10 @@ config/name="Pixel Game Jam"
 run/main_scene="res://Menu Screen/menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
+[autoload]
+
+AudioStreamPlayer2d="*res://Menu Screen/audio_stream_player_2d.tscn"
+
 [display]
 
 window/size/viewport_width=1080
