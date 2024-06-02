@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mde7611qmhgx"
+path="res://.godot/imported/clickpress.mp3-7e7615dffbd000eaebc1f3225f972f99.mp3str"
+
+[deps]
+
+source_file="res://Menu Screen/UI/clickpress.mp3"
+dest_files=["res://.godot/imported/clickpress.mp3-7e7615dffbd000eaebc1f3225f972f99.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -52,7 +52,7 @@ text = "Music"
 [node name="SoundFX" type="Label" parent="HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
-text = "Sound"
+text = "Sound FX"
 
 [node name="Fullscreen" type="Label" parent="HBoxContainer/Labels"]
 layout_mode = 2
@@ -71,23 +71,23 @@ size_flags_horizontal = 3
 [node name="MasterVolume" type="HSlider" parent="HBoxContainer/Checks"]
 layout_mode = 2
 size_flags_vertical = 3
-max_value = 1.0
-step = 0.001
-value = 1.0
+min_value = -30.0
+max_value = 0.0
+step = 0.01
 
 [node name="MusicVolume" type="HSlider" parent="HBoxContainer/Checks"]
 layout_mode = 2
 size_flags_vertical = 3
-max_value = 1.0
+min_value = -30.0
+max_value = 0.0
 step = 0.01
-value = 1.0
 
 [node name="SoundFX" type="HSlider" parent="HBoxContainer/Checks"]
 layout_mode = 2
 size_flags_vertical = 3
-max_value = 1.0
+min_value = -30.0
+max_value = 0.0
 step = 0.01
-value = 1.0
 
 [node name="Fullscreen" type="CheckBox" parent="HBoxContainer/Checks"]
 layout_mode = 2
@@ -97,9 +97,11 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
+[connection signal="mouse_entered" from="HBoxContainer/Checks/MasterVolume" to="." method="_on_master_volume_mouse_entered"]
 [connection signal="value_changed" from="HBoxContainer/Checks/MasterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="HBoxContainer/Checks/MusicVolume" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="HBoxContainer/Checks/SoundFX" to="." method="_on_sound_fx_value_changed"]
 [connection signal="pressed" from="HBoxContainer/Checks/Fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="toggled" from="HBoxContainer/Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="HBoxContainer/Checks/Borderless" to="." method="_on_borderless_pressed"]
 [connection signal="toggled" from="HBoxContainer/Checks/Borderless" to="." method="_on_borderless_toggled"]
