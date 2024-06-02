@@ -1,4 +1,5 @@
 extends Control
+@onready var settings = $"."
 
 var master_bus = AudioServer.get_bus_index("Master")
 var music_bus = AudioServer.get_bus_index("Music")
@@ -35,3 +36,6 @@ func _on_sound_fx_value_changed(value):
 	else:
 		AudioServer.set_bus_mute(sfx_bus, false)
 
+
+func _on_back_button_pressed():
+	settings.visible = !settings.visible

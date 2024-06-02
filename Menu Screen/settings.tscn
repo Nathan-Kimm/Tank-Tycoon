@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkfvdephju570"]
+[gd_scene load_steps=5 format=3 uid="uid://bkfvdephju570"]
 
 [ext_resource type="Script" path="res://Menu Screen/Settings.gd" id="1_fyudh"]
 [ext_resource type="Shader" path="res://Menu Screen/settings.gdshader" id="2_8wk31"]
+[ext_resource type="FontFile" uid="uid://c3ybg5gngxylr" path="res://Menu Screen/PixelifySans-Regular.ttf" id="3_0kpvl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cjiyb"]
 shader = ExtResource("2_8wk31")
@@ -42,26 +43,31 @@ layout_mode = 2
 [node name="MasterVolume" type="Label" parent="HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_0kpvl")
 text = "Master "
 
 [node name="MusicVolume" type="Label" parent="HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_0kpvl")
 text = "Music"
 
 [node name="SoundFX" type="Label" parent="HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_0kpvl")
 text = "Sound FX"
 
 [node name="Fullscreen" type="Label" parent="HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_0kpvl")
 text = "Fullscreen"
 
 [node name="Borderless" type="Label" parent="HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_0kpvl")
 text = "Borderless"
 
 [node name="Checks" type="VBoxContainer" parent="HBoxContainer"]
@@ -97,6 +103,15 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 559.0
+offset_right = 546.0
+offset_bottom = 590.0
+theme_override_fonts/font = ExtResource("3_0kpvl")
+text = "Back"
+
 [connection signal="mouse_entered" from="HBoxContainer/Checks/MasterVolume" to="." method="_on_master_volume_mouse_entered"]
 [connection signal="value_changed" from="HBoxContainer/Checks/MasterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="HBoxContainer/Checks/MusicVolume" to="." method="_on_music_volume_value_changed"]
@@ -105,3 +120,5 @@ size_flags_vertical = 3
 [connection signal="toggled" from="HBoxContainer/Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="HBoxContainer/Checks/Borderless" to="." method="_on_borderless_pressed"]
 [connection signal="toggled" from="HBoxContainer/Checks/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="pressed" from="BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjyn77ccc1jsn"]
+[gd_scene load_steps=8 format=3 uid="uid://bjyn77ccc1jsn"]
 
 [ext_resource type="Script" path="res://Menu Screen/pause_menu.gd" id="1_k0bic"]
 [ext_resource type="Shader" path="res://Menu Screen/pause_menu.gdshader" id="2_sc8a1"]
+[ext_resource type="FontFile" uid="uid://c3ybg5gngxylr" path="res://Menu Screen/PixelifySans-Regular.ttf" id="3_xan7d"]
+[ext_resource type="PackedScene" uid="uid://bkfvdephju570" path="res://Menu Screen/settings.tscn" id="4_38dld"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b65y7"]
 shader = ExtResource("2_sc8a1")
@@ -63,17 +65,23 @@ theme_override_constants/separation = 50
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xan7d")
 text = "Resume"
 
 [node name="Settings" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xan7d")
 text = "Settings"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xan7d")
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Settings" parent="." instance=ExtResource("4_38dld")]
+layout_mode = 1
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
