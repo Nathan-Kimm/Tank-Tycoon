@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 [autoload]
 
 AudioStreamPlayer2d="*res://Menu Screen/audio_stream_player_2d.tscn"
+Global="*res://Global.gd"
 
 [display]
 

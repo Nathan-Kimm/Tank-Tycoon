@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://tjtvpv71oipy"]
+
+[ext_resource type="PackedScene" uid="uid://cqxj14uose2q0" path="res://Main Tank/Fish Panels/ClownfishPanel.tscn" id="1_wpnfw"]
+[ext_resource type="PackedScene" uid="uid://jd35rhfvi7tm" path="res://Main Tank/Tank Panels/SpeedUpgrade.tscn" id="2_yrbmi"]
+
+[node name="ShopTabContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="Fish" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Fish"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Fish/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 230
+alignment = 1
+
+[node name="Clownfish" parent="TabContainer/Fish/MarginContainer/HBoxContainer" instance=ExtResource("1_wpnfw")]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="TabContainer/Fish/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "placeholder"
+
+[node name="Label5" type="Label" parent="TabContainer/Fish/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "placeholder"
+
+[node name="Tank Upgrades" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Tank Upgrades"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Tank Upgrades/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 230
+alignment = 1
+
+[node name="Speed" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer" instance=ExtResource("2_yrbmi")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "tank placeholder
+"
+
+[node name="Label2" type="Label" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "placeholder"
+
+[node name="Label3" type="Label" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "placeholder"
