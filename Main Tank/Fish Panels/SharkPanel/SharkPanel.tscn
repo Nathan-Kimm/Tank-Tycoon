@@ -60,7 +60,7 @@ text = "Buy
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "50$"
+text = "Temp Placeholder"
 
 [node name="textTimer" type="Timer" parent="."]
 one_shot = true
