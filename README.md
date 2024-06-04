@@ -15,9 +15,7 @@ Tank Tycoon is a tycoon game where you get more fish over time and make as much 
 ## Responses:
 - What Data Structures were used?
 ```
-
 A tree structure was used for the scene tree. Additionally, we used a dictionary to store the various fish and their corresponding value.
-
 ```
 
 
