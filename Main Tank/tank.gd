@@ -15,6 +15,8 @@ func _ready():
 	shop.hide()
 	scene_transition_animation.get_parent().get_node("ColorRect").color.a = 255
 	scene_transition_animation.play("fade_out")
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,3 +51,4 @@ func _on_test_button_pressed():
 
 func _on_remove_money_test_pressed():
 	Global.money -= 1
+
