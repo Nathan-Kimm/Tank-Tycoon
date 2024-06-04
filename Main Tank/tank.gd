@@ -4,25 +4,24 @@ extends Node2D
 @onready var pause_menu = $PauseMenu
 @onready var shop_button = $ShopButton
 @onready var shop = $MarginContainer/Shop
-
+@onready var money_timer = $money_timer
+var money = preload("res://Main Tank/Money.tscn")
 
 var paused = false
 var shopMenu = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	money_timer.wait_time = Global.moneySpawnInterval
+	money_timer.start()
 	pause_menu.hide()
 	shop.hide()
 	scene_transition_animation.get_parent().get_node("ColorRect").color.a = 255
 	scene_transition_animation.play("fade_out")
-	
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
-		
 		pauseMenu()
 
 func pauseMenu():
@@ -44,11 +43,17 @@ func _on_shop_button_pressed():
 		shop.show()
 		Engine.time_scale = 0
 		shopMenu = false
-		
 
-func _on_test_button_pressed():
-	Global.money += 1
-
-func _on_remove_money_test_pressed():
-	Global.money -= 1
-
+func _on_money_timer_timeout():
+	var random_x = randf_range(-700, 700)
+	var random_y = randf_range(-400, 400)
+	var spawn_position = Vector2(random_x, random_y)
+	
+	var money_sprite = money.instantiate()
+	
+	money_sprite.position = spawn_position
+	
+	add_child(money_sprite)
+	
+	money_timer.wait_time = Global.moneySpawnInterval
+	money_timer.start()

@@ -9,7 +9,7 @@ func _on_resume_pressed():
 	main.pauseMenu()
 
 func _on_settings_pressed():
-		settings.show()
+	pass
 
 func _on_quit_pressed():
 	get_tree().quit()

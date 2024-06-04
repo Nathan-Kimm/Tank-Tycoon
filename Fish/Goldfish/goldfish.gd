@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var animated_sprite_2d = $clownfish
+@onready var animated_sprite_2d = $goldfish
 
 # Constants
 const MIN_X = -1500
@@ -57,3 +57,4 @@ func check_boundaries():
 	elif global_position.y > MAX_Y:
 		global_position.y = MAX_Y
 		direction.y *= -1
+

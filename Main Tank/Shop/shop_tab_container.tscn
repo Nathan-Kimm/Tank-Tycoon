@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://tjtvpv71oipy"]
+[gd_scene load_steps=6 format=3 uid="uid://tjtvpv71oipy"]
 
-[ext_resource type="PackedScene" uid="uid://cqxj14uose2q0" path="res://Main Tank/Fish Panels/ClownfishPanel.tscn" id="1_wpnfw"]
+[ext_resource type="PackedScene" uid="uid://cqxj14uose2q0" path="res://Main Tank/Fish Panels/ClownfishPanel/ClownfishPanel.tscn" id="1_bvr00"]
+[ext_resource type="PackedScene" uid="uid://cyxc1wh4o3qf6" path="res://Main Tank/Fish Panels/GoldfishPanel/GoldfishPanel.tscn" id="2_2bbtt"]
 [ext_resource type="PackedScene" uid="uid://jd35rhfvi7tm" path="res://Main Tank/Tank Panels/SpeedUpgrade.tscn" id="2_yrbmi"]
+[ext_resource type="PackedScene" uid="uid://cpuvo64qhuq4q" path="res://Main Tank/Fish Panels/SalmonPanel/SalmonPanel.tscn" id="3_bw07d"]
+[ext_resource type="PackedScene" uid="uid://byxii6c1m1vng" path="res://Main Tank/Fish Panels/SharkPanel/SharkPanel.tscn" id="4_xij3m"]
 
 [node name="ShopTabContainer" type="Control"]
 layout_mode = 3
@@ -40,18 +43,20 @@ layout_mode = 2
 theme_override_constants/separation = 230
 alignment = 1
 
-[node name="Clownfish" parent="TabContainer/Fish/MarginContainer/HBoxContainer" instance=ExtResource("1_wpnfw")]
+[node name="Clownfish" parent="TabContainer/Fish/MarginContainer/HBoxContainer" instance=ExtResource("1_bvr00")]
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="TabContainer/Fish/MarginContainer/HBoxContainer"]
+[node name="Control" parent="TabContainer/Fish/MarginContainer/HBoxContainer" instance=ExtResource("2_2bbtt")]
 layout_mode = 2
-text = "placeholder"
 
-[node name="Label5" type="Label" parent="TabContainer/Fish/MarginContainer/HBoxContainer"]
+[node name="Control2" parent="TabContainer/Fish/MarginContainer/HBoxContainer" instance=ExtResource("3_bw07d")]
 layout_mode = 2
-text = "placeholder"
+
+[node name="Control3" parent="TabContainer/Fish/MarginContainer/HBoxContainer" instance=ExtResource("4_xij3m")]
+layout_mode = 2
 
 [node name="Tank Upgrades" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Tank Upgrades"]
