@@ -1,7 +1,7 @@
 
 # Welcome to Tank Tycoon!
 
-This is Nathan Kim's and Matthew's CS Data Structures Project
+This is Nathan Kim's and Matthew Seo's CS Data Structures Project
 
 Tank Tycoon is a tycoon game where you get more fish over time and make as much money as you can through tank upgrades. 
 
