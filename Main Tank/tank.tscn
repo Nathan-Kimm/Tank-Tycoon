@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cbwe5otcm730q" path="res://Main Tank/background.png" id="2_1ccqy"]
 [ext_resource type="PackedScene" uid="uid://bpwjk8d1l3ugi" path="res://Fish/Clownfish/clownfish.tscn" id="3_fxqdk"]
 [ext_resource type="PackedScene" uid="uid://bdntpxpnv1b5f" path="res://Menu Screen/scene_transition_animation.tscn" id="4_gy8y7"]
-[ext_resource type="PackedScene" uid="uid://bjyn77ccc1jsn" path="res://Menu Screen/pause_menu.tscn" id="5_sncyn"]
+[ext_resource type="PackedScene" uid="uid://bjyn77ccc1jsn" path="res://Main Tank/PauseMenu/pause_menu.tscn" id="5_sncyn"]
 [ext_resource type="PackedScene" uid="uid://cimtibxicbj1m" path="res://Main Tank/Shop/shop.tscn" id="6_4gtmg"]
-[ext_resource type="Texture2D" uid="uid://c1i4o7m84rben" path="res://shop button.png" id="6_qhsv8"]
+[ext_resource type="Texture2D" uid="uid://ke5y7bw00jvd" path="res://Main Tank/pixil-frame-0 (2) (1).png" id="6_jkg4u"]
 [ext_resource type="FontFile" uid="uid://c3ybg5gngxylr" path="res://Menu Screen/PixelifySans-Regular.ttf" id="7_c6fqm"]
 [ext_resource type="Script" path="res://Main Tank/Money Counter.gd" id="8_g2mhf"]
 
@@ -50,14 +50,14 @@ anchor_bottom = 0.5
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -1124.0
-offset_top = -25.0
-offset_right = -522.0
-offset_bottom = 398.0
+offset_left = -955.0
+offset_top = 106.0
+offset_right = -738.0
+offset_bottom = 200.0
 grow_vertical = 0
 text = "
 "
-icon = ExtResource("6_qhsv8")
+icon = ExtResource("6_jkg4u")
 flat = true
 icon_alignment = 1
 expand_icon = true

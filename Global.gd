@@ -1,9 +1,13 @@
 extends Node
 
-var money = 100
+var money = 10000
 
-var moneySpawnInterval = 100
+var moneyWorth = 5
 
-var fishSpeed = 500.0
+var moneySpawnInterval = 12 #20 default
 
-var fishPriceDict = {"Clownfish": 50, "Goldfish": 75, "Salmon": 100, "Shark": 250}
+var fishSpeed = 100.0
+
+var fishPriceDict = {"Clownfish": 50, "Goldfish": 75, "Koi": 100, "Shark": 250, "Speed": 25, "Money" : 50, "MoneyWorth" : 50}
+
+var sharkBought = 0

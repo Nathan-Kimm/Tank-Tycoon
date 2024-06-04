@@ -1,5 +1,5 @@
 extends Control
-var Goldfish = preload ("res://Fish/Goldfish/goldfish.tscn")
+var Koifish = preload ("res://Fish/Koifish/koifish.tscn")
 @onready var moneywarning = $moneywarning
 
 var tank
@@ -20,10 +20,11 @@ func _on_text_timer_timeout():
 	print("Finished timer")
 
 func _on_button_pressed():
-	if Global.money > Global.fishPriceDict["Salmon"]:
-		var c = Goldfish.instantiate()
+	if Global.money >= Global.fishPriceDict["Koi"]:
+		var c = Koifish.instantiate()
 		c.position = Vector2(-504, -295)
 		tank.add_child(c)
+		Global.money -= 100
 	else:
 		text_timer.start()
 		moneywarning.visible = true

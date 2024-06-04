@@ -1,18 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpuvo64qhuq4q"]
+[gd_scene load_steps=6 format=3 uid="uid://3yoj30vwll0k"]
 
-[ext_resource type="Script" path="res://Main Tank/Fish Panels/SalmonPanel/SalmonPanel.gd" id="1_va8hr"]
-[ext_resource type="Texture2D" uid="uid://bcy770c8codv5" path="res://Fish/Clownfish/enlarged_clownfish_sprite_sheet.png" id="2_m7cco"]
-[ext_resource type="FontFile" uid="uid://c3ybg5gngxylr" path="res://Menu Screen/PixelifySans-Regular.ttf" id="3_r8m37"]
+[ext_resource type="Script" path="res://Main Tank/Tank Panels/SpeedPanel/SpeedUpgrade.gd" id="1_llckg"]
+[ext_resource type="Texture2D" uid="uid://bobaxymgu505u" path="res://Main Tank/Tank Panels/MoneyPanel/dollar1-sheet-sheet.png" id="2_4nhff"]
+[ext_resource type="FontFile" uid="uid://c3ybg5gngxylr" path="res://Menu Screen/PixelifySans-Regular.ttf" id="3_lrpsh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xt3x"]
-atlas = ExtResource("2_m7cco")
-region = Rect2(0, 0, 1080, 640)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fvat"]
+atlas = ExtResource("2_4nhff")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pegxr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8xt3x")
+"texture": SubResource("AtlasTexture_1fvat")
 }],
 "loop": true,
 "name": &"default",
@@ -26,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_va8hr")
+script = ExtResource("1_llckg")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,8 +47,8 @@ layout_mode = 2
 color = Color(0.360784, 0.25098, 0.2, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer"]
-position = Vector2(101, 69)
-scale = Vector2(0.2, 0.2)
+position = Vector2(100, 69)
+scale = Vector2(7.62969, 7.33828)
 sprite_frames = SubResource("SpriteFrames_pegxr")
 
 [node name="Button" type="Button" parent="MarginContainer"]
@@ -60,21 +60,31 @@ text = "Buy
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Temp Placeholder"
+text = "$50"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 444.0
+offset_top = 345.0
+offset_right = 634.0
+offset_bottom = 368.0
+scale = Vector2(1.00614, 1)
+size_flags_horizontal = 4
+text = "+%10 Money Spawn rate"
+
+[node name="moneywarning" type="Label" parent="."]
+layout_mode = 2
+offset_left = 447.0
+offset_top = 376.0
+offset_right = 647.0
+offset_bottom = 401.0
+pivot_offset = Vector2(-6.82083, -4.53693)
+theme_override_colors/font_color = Color(0.831373, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lrpsh")
+theme_override_font_sizes/font_size = 20
+text = "Not Enough Money! or max reached!"
 
 [node name="textTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="moneywarning" type="Label" parent="."]
-layout_mode = 0
-offset_left = -85.0
-offset_top = 270.0
-offset_right = 95.0
-offset_bottom = 295.0
-theme_override_colors/font_color = Color(0.831373, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_r8m37")
-theme_override_font_sizes/font_size = 20
-text = "Not Enough Money!"
-
 [connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="textTimer" to="." method="_on_text_timer_timeout"]

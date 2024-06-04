@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://tjtvpv71oipy"]
+[gd_scene load_steps=10 format=3 uid="uid://tjtvpv71oipy"]
 
 [ext_resource type="PackedScene" uid="uid://cqxj14uose2q0" path="res://Main Tank/Fish Panels/ClownfishPanel/ClownfishPanel.tscn" id="1_bvr00"]
 [ext_resource type="PackedScene" uid="uid://cyxc1wh4o3qf6" path="res://Main Tank/Fish Panels/GoldfishPanel/GoldfishPanel.tscn" id="2_2bbtt"]
-[ext_resource type="PackedScene" uid="uid://jd35rhfvi7tm" path="res://Main Tank/Tank Panels/SpeedUpgrade.tscn" id="2_yrbmi"]
-[ext_resource type="PackedScene" uid="uid://cpuvo64qhuq4q" path="res://Main Tank/Fish Panels/SalmonPanel/SalmonPanel.tscn" id="3_bw07d"]
+[ext_resource type="PackedScene" uid="uid://cpuvo64qhuq4q" path="res://Main Tank/Fish Panels/KoiPanel/KoiPanel.tscn" id="3_bw07d"]
 [ext_resource type="PackedScene" uid="uid://byxii6c1m1vng" path="res://Main Tank/Fish Panels/SharkPanel/SharkPanel.tscn" id="4_xij3m"]
+[ext_resource type="PackedScene" uid="uid://jd35rhfvi7tm" path="res://Main Tank/Tank Panels/SpeedPanel/SpeedUpgrade.tscn" id="5_obak0"]
+[ext_resource type="PackedScene" uid="uid://3yoj30vwll0k" path="res://Main Tank/Tank Panels/MoneyPanel/MoneyUpgrade.tscn" id="6_ealsb"]
+[ext_resource type="Script" path="res://Main Tank/Tank Panels/MoneyPanel/MoneyUpgrade.gd" id="7_nor0l"]
+[ext_resource type="PackedScene" uid="uid://o21sgqrn81sx" path="res://Main Tank/Tank Panels/MoneyWorth/MoneyWorth.tscn" id="8_tmbkj"]
+[ext_resource type="Script" path="res://Main Tank/Tank Panels/MoneyWorth/MoneyWorth.gd" id="9_ke5g2"]
 
 [node name="ShopTabContainer" type="Control"]
 layout_mode = 3
@@ -72,18 +76,13 @@ layout_mode = 2
 theme_override_constants/separation = 230
 alignment = 1
 
-[node name="Speed" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer" instance=ExtResource("2_yrbmi")]
+[node name="Speed" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer" instance=ExtResource("5_obak0")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer"]
+[node name="Money" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer" instance=ExtResource("6_ealsb")]
 layout_mode = 2
-text = "tank placeholder
-"
+script = ExtResource("7_nor0l")
 
-[node name="Label2" type="Label" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer"]
+[node name="MoneyWorth" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer" instance=ExtResource("8_tmbkj")]
 layout_mode = 2
-text = "placeholder"
-
-[node name="Label3" type="Label" parent="TabContainer/Tank Upgrades/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "placeholder"
+script = ExtResource("9_ke5g2")

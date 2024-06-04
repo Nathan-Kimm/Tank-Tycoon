@@ -1,20 +1,6 @@
 extends Control
-
-@onready var main = $"../"
-@onready var settings = $Settings
-@onready var menu = $"."
 @onready var pause_menu = $"."
 
-func _on_resume_pressed():
-	main.pauseMenu()
-
-func _on_settings_pressed():
-	pass
-
-func _on_quit_pressed():
-	get_tree().quit()
-	
-	
 var master_bus = AudioServer.get_bus_index("Master")
 var music_bus = AudioServer.get_bus_index("Music")
 var sfx_bus =  AudioServer.get_bus_index("SFX")
@@ -56,5 +42,5 @@ func _on_sound_fx_value_changed(value):
 
 
 func _on_back_button_pressed():
-	settings.visible = !settings.visible
-
+	pause_menu.visible = !pause_menu.visible
+	#note this works but you need to press esc for the game to resume idk the code for it
