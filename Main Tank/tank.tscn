@@ -45,8 +45,6 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="ShopButton" type="Button" parent="."]
 anchors_preset = 2
 anchor_top = 1.0

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var animated_sprite_2d = $Fishes/clownfish
 
 # Constants
 const MIN_X = -1200

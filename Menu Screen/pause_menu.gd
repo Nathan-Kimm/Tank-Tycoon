@@ -9,7 +9,52 @@ func _on_resume_pressed():
 	main.pauseMenu()
 
 func _on_settings_pressed():
-	settings.show()
+		settings.show()
 
 func _on_quit_pressed():
 	get_tree().quit()
+	
+	
+var master_bus = AudioServer.get_bus_index("Master")
+var music_bus = AudioServer.get_bus_index("Music")
+var sfx_bus =  AudioServer.get_bus_index("SFX")
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _on_fullscreen_toggled(toggled_on):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+	
+
+func _on_borderless_toggled(toggled_on):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		
+
+
+
+func _on_master_volume_value_changed(value):
+	AudioServer.set_bus_volume_db(master_bus,value)
+	if value == -30:
+		AudioServer.set_bus_mute(master_bus,true)
+	else:
+		AudioServer.set_bus_mute(master_bus, false)
+
+
+func _on_music_volume_value_changed(value):
+	AudioServer.set_bus_volume_db(music_bus,value)
+	if value == -30:
+		AudioServer.set_bus_mute(music_bus,true)
+	else:
+		AudioServer.set_bus_mute(music_bus, false)
+
+
+func _on_sound_fx_value_changed(value): 
+	AudioServer.set_bus_volume_db(sfx_bus,value)
+	if value == -30:
+		AudioServer.set_bus_mute(sfx_bus,true)
+	else:
+		AudioServer.set_bus_mute(sfx_bus, false)
+
+
+func _on_back_button_pressed():
+	settings.visible = !settings.visible
+

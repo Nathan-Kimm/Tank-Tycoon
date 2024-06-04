@@ -6,11 +6,15 @@ var music_bus = AudioServer.get_bus_index("Music")
 var sfx_bus =  AudioServer.get_bus_index("SFX")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_fullscreen_toggled(toggled_on):
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 	
 
 func _on_borderless_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		
+
 
 
 func _on_master_volume_value_changed(value):
