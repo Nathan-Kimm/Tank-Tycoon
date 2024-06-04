@@ -120,5 +120,5 @@ text = "Back"
 [connection signal="toggled" from="HBoxContainer/Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="HBoxContainer/Checks/Borderless" to="." method="_on_borderless_pressed"]
 [connection signal="toggled" from="HBoxContainer/Checks/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="pressed" from="BackButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_button_pressed"]

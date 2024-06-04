@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds81fqt5erxas"]
+
+[ext_resource type="Script" path="res://Fish/Sharkfish/Sharkfish.gd" id="1_wc6ff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l44ic"]
+size = Vector2(102, 48)
+
+[node name="Sharkfish" type="Node2D"]
+script = ExtResource("1_wc6ff")
+
+[node name="sharkfish" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_l44ic")
+
+[node name="Timer" type="Timer" parent="."]

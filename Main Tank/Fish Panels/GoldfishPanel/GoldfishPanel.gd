@@ -20,10 +20,11 @@ func _on_text_timer_timeout():
 	print("Finished timer")
 
 func _on_button_pressed():
-	if Global.money > Global.fishPriceDict["Goldfish"]:
+	if Global.money >= Global.fishPriceDict["Goldfish"]:
 		var c = Goldfish.instantiate()
 		c.position = Vector2(-504, -295)
 		tank.add_child(c)
+		Global.money -= 75
 	else:
 		text_timer.start()
 		moneywarning.visible = true

@@ -1,13 +1,12 @@
-extends CharacterBody2D
-@onready var animated_sprite_2d = $goldfish
-
+extends Node2D
+@onready var animated_sprite_2d = $koifish
 
 # Constants
 const MIN_X = -1500
 const MAX_X = 100
 const MIN_Y = -1100
 const MAX_Y = -200
-var SPEED = Global.fishSpeed + 50
+var SPEED = Global.fishSpeed + 100
 
 # Variables
 var direction = Vector2.ZERO

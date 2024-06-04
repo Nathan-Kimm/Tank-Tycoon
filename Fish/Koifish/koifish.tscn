@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgxf0dhj3dcae"]
+
+[ext_resource type="Script" path="res://Fish/Koifish/koifish.gd" id="1_xv0av"]
+[ext_resource type="Texture2D" uid="uid://d4br188bsd0ho" path="res://Fish/Koifish/koi fish (1).png" id="2_gpag3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqk12"]
+size = Vector2(119, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyjfi"]
+atlas = ExtResource("2_gpag3")
+region = Rect2(0, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkfah"]
+atlas = ExtResource("2_gpag3")
+region = Rect2(100, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cveit"]
+atlas = ExtResource("2_gpag3")
+region = Rect2(200, 0, 100, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h87di"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyjfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkfah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cveit")
+}],
+"loop": true,
+"name": &"swimming",
+"speed": 5.0
+}]
+
+[node name="Koifish" type="Node2D"]
+script = ExtResource("1_xv0av")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -2)
+shape = SubResource("RectangleShape2D_lqk12")
+
+[node name="koifish" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, 1)
+scale = Vector2(1.81, 1.95)
+sprite_frames = SubResource("SpriteFrames_h87di")
+animation = &"swimming"
+
+[node name="Timer" type="Timer" parent="."]
