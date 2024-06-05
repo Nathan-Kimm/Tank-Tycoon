@@ -11,7 +11,7 @@ Tank Tycoon is a tycoon game where you get more fish over time and make as much 
 - Money will start to spawn after 12 seconds and you can click with the left mouse button.
 - Each dollar found will be worth $5
 - Upgrades can be bought as you progress through the game to get more money
-- Continue this until you get to buy a shark for your aquarium!
+- Continue this until you get to buy a shark for your aquarium! (End credits show when shark is bought)
 
 ## Upgrades:
 1. **Speed Upgrade**
