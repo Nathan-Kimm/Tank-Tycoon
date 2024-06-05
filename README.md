@@ -23,10 +23,9 @@ Tank Tycoon is a tycoon game where you get more fish over time and make as much 
 
 ## Responses:
 - **What Data Structures were used?**
-```
-Godot uses a SceneTree which manages the hierarchy of nodes in a scene.
-Additionally, we used a dictionary to store the prices of the various fish and upgrades
-```
+   - Godot uses a SceneTree which manages the hierarchy of nodes in a scene.
+   - Additionally, we used a dictionary to store the prices of the various fish and upgrades
+
 
 ## Files:
 1. **tscn files**
