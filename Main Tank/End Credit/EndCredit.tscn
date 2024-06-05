@@ -3,10 +3,13 @@
 [ext_resource type="Script" path="res://Main Tank/Shop/shop.gd" id="1_rshcc"]
 
 [node name="EndCredit" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -70.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rshcc")
@@ -28,13 +31,13 @@ theme_override_font_sizes/font_size = 50
 text = "                                                Thank you for Playing Tank Tycoon!
 
 
-  Credits:
+    Credits:
 
-  Made by: Nathan Kim and Matthew Seo
+    Made by: Nathan Kim and Matthew Seo
 
-  Music by: Matthew Seo
+    Music by: Matthew Seo
 
-  Art by: Timothy Park and Matthew Seo
+    Art by: Timothy Park and Matthew Seo
 
 "
 

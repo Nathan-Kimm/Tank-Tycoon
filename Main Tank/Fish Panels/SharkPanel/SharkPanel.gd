@@ -19,7 +19,9 @@ func _on_button_pressed():
 		c.position = Vector2(-504, -295)
 		tank.add_child(c)
 		Global.money -= 250
-		end_credit.show()
+		if Global.sharkBought == 0:
+			end_credit.show()
+		Global.sharkBought += 1
 	else:
 		moneywarning.visible = true
 		await get_tree().create_timer(2).timeout

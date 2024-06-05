@@ -48,5 +48,4 @@ func _on_money_timer_timeout():
 	add_child(money_sprite)
 	
 	money_timer.wait_time = Global.moneySpawnInterval
-	print(Global.moneySpawnInterval)
 	money_timer.start()

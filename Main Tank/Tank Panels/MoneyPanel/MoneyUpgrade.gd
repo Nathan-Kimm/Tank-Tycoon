@@ -13,7 +13,7 @@ func _ready():
 	moneywarning.visible = false
 		
 func _on_button_pressed():
-	if Global.money >= Global.upgradePriceDict["Speed"] && Global.moneySpawnInterval != 1:
+	if Global.money >= Global.upgradePriceDict["Money"] && Global.moneySpawnInterval != 1:
 		Global.moneySpawnInterval -=1
 		Global.money -= 30
 	elif Global.moneySpawnInterval == 0:
