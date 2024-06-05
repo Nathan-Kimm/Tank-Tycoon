@@ -12,9 +12,10 @@ func _on_text_timer_timeout():
 	print("Finished timer")
 
 func _on_button_pressed():
-	if Global.money >= Global.fishPriceDict["Speed"]:
+	if Global.money >= Global.upgradePriceDict["Speed"]:
 		Global.fishSpeed +=50
 		Global.money -= 50
 	else:
-		text_timer.start()
 		moneywarning.visible = true
+		await get_tree().create_timer(2).timeout
+		moneywarning.visible = false

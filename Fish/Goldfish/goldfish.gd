@@ -32,7 +32,7 @@ func set_new_direction():
 	direction.x = randf_range(-1, 1)
 	direction.y = randf_range(-1, 1)
 	# Normalize the direction to maintain consistent speed
-	#direction = direction.normalized()
+	direction = direction.normalized()
 
 func move_sprite(delta):
 	# Calculate the movement vector

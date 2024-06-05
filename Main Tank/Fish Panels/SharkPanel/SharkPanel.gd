@@ -1,36 +1,28 @@
 extends Control
-var Sharkfish = preload ("res://Fish/Sharkfish/sharkfish.tscn")
+var sharkfish = preload("res://Fish/Sharkfish/sharkfish.tscn")
 @onready var moneywarning = $moneywarning
+@onready var end_credit = $EndCredit
 
-@onready var shop = $"Shop"
-@onready var EndCredit = $"EndCredit"
 
 var tank
 @onready var text_timer = $textTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	end_credit.hide()
 	moneywarning.visible = false
-	
 	tank = get_tree().get_current_scene()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _on_text_timer_timeout():
-	moneywarning.visible = false
-	print("Finished timer")
 
 func _on_button_pressed():
 	if Global.money >= Global.fishPriceDict["Shark"]:
-		var c = Sharkfish.instantiate()
+		var c = sharkfish.instantiate()
 		c.position = Vector2(-504, -295)
 		tank.add_child(c)
 		Global.money -= 250
+		end_credit.show()
 	else:
-		text_timer.start()
 		moneywarning.visible = true
+		await get_tree().create_timer(2).timeout
+		moneywarning.visible = false
 		
-	shop.hide()
-	EndCredit.show()
+	

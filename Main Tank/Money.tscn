@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwt5jid1trbry"]
 
-[ext_resource type="Texture2D" uid="uid://bm25vbdafmm72" path="res://Main Tank/money icon.png" id="1_hknxt"]
+[ext_resource type="Texture2D" uid="uid://bm25vbdafmm72" path="res://Main Tank/Tank Panels/MoneyWorth/money icon.png" id="1_5uggk"]
 [ext_resource type="Script" path="res://Main Tank/Money Sprite.gd" id="2_cuow6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsmdr"]
-size = Vector2(117, 51)
+size = Vector2(117, 56)
 
 [node name="Money" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(32.5, 22)
 scale = Vector2(7.0625, 5.75)
-texture = ExtResource("1_hknxt")
+texture = ExtResource("1_5uggk")
 script = ExtResource("2_cuow6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(32.5, 19.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+scale = Vector2(0.141593, 0.173913)
 shape = SubResource("RectangleShape2D_wsmdr")

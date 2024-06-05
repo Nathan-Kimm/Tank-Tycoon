@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bka0yearqft8"
-path="res://.godot/imported/speed2.png-cce812f466edafdeb5d9c663ae588ffb.ctex"
+uid="uid://b5i26sluyddsu"
+path="res://.godot/imported/shark.png-0e6d8d914fd57e0d619f749fdb3be08c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main Tank/speed2.png"
-dest_files=["res://.godot/imported/speed2.png-cce812f466edafdeb5d9c663ae588ffb.ctex"]
+source_file="res://Fish/Sharkfish/shark.png"
+dest_files=["res://.godot/imported/shark.png-0e6d8d914fd57e0d619f749fdb3be08c.ctex"]
 
 [params]
 

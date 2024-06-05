@@ -3,9 +3,9 @@ extends Node2D
 @onready var animated_sprite_2d = $sharkfish
 
 # Constants
-const MIN_X = -1500
+const MIN_X = -1300
 const MAX_X = 100
-const MIN_Y = -1100
+const MIN_Y = -1000
 const MAX_Y = -200
 var SPEED = Global.fishSpeed +150
 
@@ -26,13 +26,13 @@ func _process(delta):
 	move_sprite(delta)
 	# Check for collision with boundaries and bounce
 	check_boundaries()
-
+ 
 func set_new_direction():
 	# Set a random direction
 	direction.x = randf_range(-1, 1)
 	direction.y = randf_range(-1, 1)
 	# Normalize the direction to maintain consistent speed
-	#direction = direction.normalized()
+	direction = direction.normalized()
 
 func move_sprite(delta):
 	# Calculate the movement vector

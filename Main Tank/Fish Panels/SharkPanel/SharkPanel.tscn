@@ -1,18 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://byxii6c1m1vng"]
+[gd_scene load_steps=7 format=3 uid="uid://byxii6c1m1vng"]
 
 [ext_resource type="Script" path="res://Main Tank/Fish Panels/SharkPanel/SharkPanel.gd" id="1_5rkrj"]
-[ext_resource type="Texture2D" uid="uid://bcy770c8codv5" path="res://Fish/Clownfish/enlarged_clownfish_sprite_sheet.png" id="2_y33pg"]
+[ext_resource type="Texture2D" uid="uid://b5i26sluyddsu" path="res://Fish/Sharkfish/shark.png" id="2_28k23"]
 [ext_resource type="FontFile" uid="uid://c3ybg5gngxylr" path="res://Menu Screen/PixelifySans-Regular.ttf" id="3_46cax"]
+[ext_resource type="PackedScene" uid="uid://c4phxg7olew62" path="res://Main Tank/End Credit/EndCredit.tscn" id="4_r6od5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xt3x"]
-atlas = ExtResource("2_y33pg")
-region = Rect2(0, 0, 1080, 640)
+[sub_resource type="AtlasTexture" id="AtlasTexture_va08x"]
+atlas = ExtResource("2_28k23")
+region = Rect2(1080, 0, 1080, 640)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pegxr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_iu4dp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8xt3x")
+"texture": SubResource("AtlasTexture_va08x")
 }],
 "loop": true,
 "name": &"default",
@@ -47,9 +48,15 @@ layout_mode = 2
 color = Color(0.360784, 0.25098, 0.2, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer"]
-position = Vector2(101, 69)
-scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_pegxr")
+position = Vector2(105, 69)
+scale = Vector2(0.22, 0.239)
+sprite_frames = SubResource("SpriteFrames_iu4dp")
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$250
+"
 
 [node name="Button" type="Button" parent="MarginContainer"]
 layout_mode = 2
@@ -57,24 +64,29 @@ size_flags_vertical = 8
 text = "Buy
 "
 
-[node name="Label" type="Label" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "$250"
-
-[node name="textTimer" type="Timer" parent="."]
-one_shot = true
-
 [node name="moneywarning" type="Label" parent="."]
 layout_mode = 0
 offset_left = -85.0
-offset_top = 270.0
+offset_top = 340.0
 offset_right = 95.0
-offset_bottom = 295.0
+offset_bottom = 365.0
 theme_override_colors/font_color = Color(0.831373, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_46cax")
 theme_override_font_sizes/font_size = 20
 text = "Not Enough Money!"
 
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 315.0
+offset_right = 150.0
+offset_bottom = 340.0
+theme_override_fonts/font = ExtResource("3_46cax")
+theme_override_font_sizes/font_size = 20
+text = "Shark"
+
+[node name="EndCredit" parent="." instance=ExtResource("4_r6od5")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="textTimer" to="." method="_on_text_timer_timeout"]

@@ -62,19 +62,25 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "75$"
 
-[node name="textTimer" type="Timer" parent="."]
-one_shot = true
-
 [node name="moneywarning" type="Label" parent="."]
 layout_mode = 0
 offset_left = -85.0
-offset_top = 270.0
+offset_top = 340.0
 offset_right = 95.0
-offset_bottom = 295.0
+offset_bottom = 365.0
 theme_override_colors/font_color = Color(0.831373, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_celm0")
 theme_override_font_sizes/font_size = 20
 text = "Not Enough Money!"
 
+[node name="moneywarning2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 315.0
+offset_right = 140.0
+offset_bottom = 340.0
+theme_override_fonts/font = ExtResource("3_celm0")
+theme_override_font_sizes/font_size = 20
+text = "Goldfish"
+
 [connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="textTimer" to="." method="_on_text_timer_timeout"]

@@ -1,17 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds81fqt5erxas"]
+[gd_scene load_steps=8 format=3 uid="uid://ds81fqt5erxas"]
 
 [ext_resource type="Script" path="res://Fish/Sharkfish/Sharkfish.gd" id="1_wc6ff"]
+[ext_resource type="Texture2D" uid="uid://b5i26sluyddsu" path="res://Fish/Sharkfish/shark.png" id="2_qu014"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgwcx"]
+atlas = ExtResource("2_qu014")
+region = Rect2(0, 0, 1080, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mviy"]
+atlas = ExtResource("2_qu014")
+region = Rect2(1080, 0, 1080, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7bcr"]
+atlas = ExtResource("2_qu014")
+region = Rect2(2160, 0, 1080, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qbfd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgwcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mviy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7bcr")
+}],
+"loop": true,
+"name": &"swimming",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l44ic"]
-size = Vector2(102, 48)
+size = Vector2(664, 317)
 
 [node name="Sharkfish" type="Node2D"]
 script = ExtResource("1_wc6ff")
 
 [node name="sharkfish" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8qbfd")
+animation = &"swimming"
+frame_progress = 0.784859
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -1)
+position = Vector2(-8, -35.5)
 shape = SubResource("RectangleShape2D_l44ic")
 
 [node name="Timer" type="Timer" parent="."]

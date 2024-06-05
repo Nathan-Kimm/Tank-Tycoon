@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1i4o7m84rben"
-path="res://.godot/imported/shop button.png-51ab4ad22adc8426306b8be202edb7b3.ctex"
+uid="uid://bm25vbdafmm72"
+path="res://.godot/imported/money icon.png-d7ec1bda2f84712f3341b1494ee44250.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shop button.png"
-dest_files=["res://.godot/imported/shop button.png-51ab4ad22adc8426306b8be202edb7b3.ctex"]
+source_file="res://Main Tank/Tank Panels/MoneyWorth/money icon.png"
+dest_files=["res://.godot/imported/money icon.png-d7ec1bda2f84712f3341b1494ee44250.ctex"]
 
 [params]
 

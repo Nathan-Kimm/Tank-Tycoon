@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm25vbdafmm72"
-path="res://.godot/imported/money icon.png-597d3d378ca662882112f999724f9214.ctex"
+uid="uid://ke5y7bw00jvd"
+path="res://.godot/imported/pixil-frame-0 (2) (1).png-920ea01d9796e312998db76d1830194b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main Tank/money icon.png"
-dest_files=["res://.godot/imported/money icon.png-597d3d378ca662882112f999724f9214.ctex"]
+source_file="res://Main Tank/Shop/pixil-frame-0 (2) (1).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (2) (1).png-920ea01d9796e312998db76d1830194b.ctex"]
 
 [params]
 

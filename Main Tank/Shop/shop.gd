@@ -1,18 +1,14 @@
 extends Control
 
 @onready var button = $MarginContainer/VBoxContainer/Button
-@onready var EndCredit = $"."
+@onready var end_credit = $"."
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass
 
 
 func _on_button_pressed():
-	EndCredit.hide()
+	end_credit.hide()
 	Engine.time_scale = 1

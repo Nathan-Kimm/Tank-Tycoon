@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bcy770c8codv5" path="res://Fish/Clownfish/enlarged_clownfish_sprite_sheet.png" id="1_7bcxx"]
 [ext_resource type="Script" path="res://Fish/Clownfish/clownfish.gd" id="1_563nh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ie0b"]
-size = Vector2(58.4375, 42.5)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rsyk"]
 atlas = ExtResource("1_7bcxx")
 region = Rect2(0, 0, 1080, 640)
@@ -35,13 +32,12 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ie0b"]
+size = Vector2(86, 63)
+
 [node name="Clownfish" type="CharacterBody2D"]
 position = Vector2(-504, -295)
 script = ExtResource("1_563nh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(96.7813, 25.75)
-shape = SubResource("RectangleShape2D_3ie0b")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -52,5 +48,9 @@ sprite_frames = SubResource("SpriteFrames_arhgj")
 animation = &"swimming"
 frame = 2
 frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(94, 23.5)
+shape = SubResource("RectangleShape2D_3ie0b")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

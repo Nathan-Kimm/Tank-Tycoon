@@ -27,6 +27,7 @@ script = ExtResource("1_k0bic")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_04agh")
+layout_mode = 0
 offset_right = 1097.0
 offset_bottom = 664.0
 scale = Vector2(1.25083, 1.1805)
@@ -112,6 +113,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="BackButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 501.0
 offset_top = 559.0
 offset_right = 546.0
